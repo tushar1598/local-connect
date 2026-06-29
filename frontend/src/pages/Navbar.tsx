@@ -70,7 +70,7 @@ const Navbar = () => {
                 Local<span className="text-indigo-600">Connect</span>
               </h2>
 
-              <p className="-mt-1 text-xs text-gray-500">
+              <p className="-mt-1 text-xs text-blue-500">
                 Find Trusted Local Services
               </p>
             </div>
