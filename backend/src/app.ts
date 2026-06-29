@@ -29,6 +29,13 @@ app.use(morgan("dev"));
 
 app.use("/", routes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Local Connect Backend is Running 🚀",
+  });
+});
+
 app.listen(PORT, (err) => {
   if (err) {
     console.log("Error starting server: ", err);
