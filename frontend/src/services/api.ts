@@ -33,7 +33,7 @@ api.interceptors.response.use(
 
       try {
         const response = await axios.post(
-          "http://localhost:9000/refresh-token",
+          `${import.meta.env.VITE_API_URL}/refresh-token`,
           {},
           {
             withCredentials: true,
