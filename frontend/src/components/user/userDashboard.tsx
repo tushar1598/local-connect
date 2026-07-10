@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useAppDispatch } from "../../app/hook";
 import { getNearbyBusinesses } from "../../features/business/businessThunk";
-import SearchDiscovery from "./new look/SearchDiscovery";
-import NearbyBusinesses from "./new look/NearbyBusinesses";
-import RecommendedBusinesses from "./new look/RecommendedBusinesses";
-import RecentlyViewed from "./new look/RecentlyViewed";
+import SearchDiscovery from "./newlook/SearchDiscovery";
+import NearbyBusinesses from "./newlook/NearbyBusinesses";
+import RecommendedBusinesses from "./newlook/RecommendedBusinesses";
+import RecentlyViewed from "./newlook/RecentlyViewed";
 
 const UserDashboard = () => {
   const dispatch = useAppDispatch();
