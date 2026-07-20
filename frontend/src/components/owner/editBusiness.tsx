@@ -134,7 +134,7 @@ const EditBusinessModal = ({ isOpen, business, onClose }: Props) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[999] bg-black/50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[999] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="flex justify-between items-center border-b px-6 py-5">

@@ -14,7 +14,7 @@ export interface Business {
   };
 
   owner: string;
-
+  businessAvatar: string;
   isActive: boolean;
 
   rating: number;

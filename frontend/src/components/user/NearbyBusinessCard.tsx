@@ -1,21 +1,10 @@
 import { BadgeCheck, Clock3, MapPin, Phone, Star } from "lucide-react";
 
-interface NearbyBusinessCardProps {
-  business: {
-    _id: string;
-    businessName: string;
-    serviceType: string;
-    city: string;
-    state: string;
-    rating: number;
-    image?: string;
-    distance?: string;
-    isVerified?: boolean;
-    isOpen?: boolean;
-  };
+interface Props {
+  business: any;
 }
 
-const NearbyBusinessCard = ({ business }: NearbyBusinessCardProps) => {
+const NearbyBusinessCard = ({ business }: Props) => {
   return (
     <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       {/* Image */}
@@ -23,7 +12,7 @@ const NearbyBusinessCard = ({ business }: NearbyBusinessCardProps) => {
       <div className="relative h-52 overflow-hidden">
         <img
           src={
-            business.image ??
+            // business.businessAvatar ??
             "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800"
           }
           alt={business.businessName}
@@ -33,13 +22,13 @@ const NearbyBusinessCard = ({ business }: NearbyBusinessCardProps) => {
         {/* Status */}
 
         <div className="absolute left-4 top-4 flex gap-2">
-          {business.isOpen && (
+          {business.isActive && (
             <span className="rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white">
               Open Now
             </span>
           )}
 
-          {business.isVerified && (
+          {business.isActive && (
             <span className="flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-semibold text-gray-800 shadow">
               <BadgeCheck size={14} className="text-indigo-600" />
               Verified

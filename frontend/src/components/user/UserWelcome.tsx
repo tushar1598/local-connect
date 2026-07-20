@@ -1,4 +1,4 @@
-import { useAppSelector } from "../../../app/hook";
+import { useAppSelector } from "../../app/hook";
 
 const UserHeader = () => {
   const { user } = useAppSelector((state) => state.auth);

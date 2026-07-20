@@ -1,6 +1,7 @@
+
 import { useAppSelector } from "../../app/hook";
-import UserBusinessCard from "./UserBusinessCard";
 import type { Business } from "../../features/business/businessTypes";
+import NearbyBusinessCard from "./NearbyBusinessCard";
 
 const NearbyBusinesses = () => {
   const { nearbyBusinesses, loading } = useAppSelector(
@@ -30,19 +31,35 @@ const NearbyBusinesses = () => {
   }
 
   return (
-    <div>
-      <div className="mb-5 flex items-center justify-between">
-        <h2 className="text-2xl font-bold">Nearby Businesses</h2>
+    <section>
+      {/* Header */}
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold">Nearby Businesses</h2>
 
-        <span className="text-gray-500">{nearbyBusinesses.length} Found</span>
+          <p className="mt-1 text-gray-500">
+            Trusted professionals near your location
+          </p>
+        </div>
+
+        <div className="flex items-center gap-5">
+          <span className="text-sm text-gray-500">
+            {nearbyBusinesses.length} Found
+          </span>
+
+          <button className="font-medium text-indigo-600 transition hover:underline">
+            View All
+          </button>
+        </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {/* Cards */}
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {nearbyBusinesses.map((business: Business) => (
-          <UserBusinessCard key={business._id} business={business} />
+          <NearbyBusinessCard key={business._id} business={business} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -11,6 +11,7 @@ export interface IBusiness extends Document {
   address: string;
   city: string;
   state: string;
+  businessAvatar?: string;
   location: ILocation;
   owner: Types.ObjectId;
   isActive: boolean;
@@ -52,6 +53,11 @@ const businessSchema = new Schema<IBusiness>(
       type: String,
       required: true,
       trim: true,
+    },
+
+    businessAvatar: {
+      type: String,
+      default: "",
     },
 
     location: {
